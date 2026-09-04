@@ -74,7 +74,7 @@ with st.sidebar:
 
 question = st.text_input(
     "Question",
-    placeholder="e.g. What happens to an alert after I close it?",
+    placeholder="e.g. How to create a ticket?",
 )
 
 if question:
