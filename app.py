@@ -33,10 +33,22 @@ if not Path("./chroma").exists():
     if DOCS_DIR is None:
         st.error("No docs folder found (looked for ./docs and ./docs_sample).")
         st.stop()
+    import subprocess
+    import sys
+
+    def run_step(label, cmd):
+        """check=True hides the child's stderr behind a bare CalledProcessError,
+        which Streamlit Cloud then redacts -- so capture it and show it."""
+        proc = subprocess.run(cmd, capture_output=True, text=True)
+        if proc.returncode != 0:
+            st.error(f"Setup step failed: {label}")
+            st.code((proc.stderr or proc.stdout or "no output")[-3000:], language="text")
+            st.stop()
+
     with st.spinner("First-time setup: building the search index (~1-2 min)…"):
-        import subprocess
-        subprocess.run(["python", "ingest.py", "--src", DOCS_DIR, "--out", "chunks.json"], check=True)
-        subprocess.run(["python", "build_index.py", "--chunks", "chunks.json", "--db", "./chroma"], check=True)
+        py = sys.executable  # the venv's python, not whatever "python" resolves to
+        run_step("ingest.py", [py, "ingest.py", "--src", DOCS_DIR, "--out", "chunks.json"])
+        run_step("build_index.py", [py, "build_index.py", "--chunks", "chunks.json", "--db", "./chroma"])
 
 from retrieve import MODEL, ask, get_client
 
