@@ -1,0 +1,11 @@
+docs/
+chroma/
+chunks.json
+results_*.json
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+.claude/
+.DS_Store

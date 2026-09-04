@@ -1,0 +1,50 @@
+[
+  {
+    "id": "s01",
+    "question": "What are the four ticket statuses and what does each one mean?",
+    "expected_files": ["ticket-statuses.md"],
+    "type": "single-hop"
+  },
+  {
+    "id": "s02",
+    "question": "How do I make a custom field required?",
+    "expected_files": ["custom-fields.md"],
+    "type": "single-hop"
+  },
+  {
+    "id": "s03",
+    "question": "What are the four priority levels and their response SLAs?",
+    "expected_files": ["priority-levels.md"],
+    "type": "single-hop"
+  },
+  {
+    "id": "s04",
+    "question": "How does auto-assignment decide which agent gets a new ticket?",
+    "expected_files": ["how-to-assign-ticket.md"],
+    "type": "single-hop"
+  },
+  {
+    "id": "s05",
+    "question": "If a ticket is Waiting on Customer and its SLA deadline was already in the past when the requester replies, what happens to its status and its escalation?",
+    "expected_files": ["ticket-statuses.md", "how-to-escalation-rules.md"],
+    "type": "multi-hop"
+  },
+  {
+    "id": "s06",
+    "question": "Does closing a ticket in bulk still enforce required custom fields?",
+    "expected_files": ["how-to-close-ticket.md", "custom-fields.md"],
+    "type": "multi-hop"
+  },
+  {
+    "id": "s07",
+    "question": "Which search fields let me pick more than one value at once, and can I filter on a custom field from the Advanced Search panel?",
+    "expected_files": ["search-fields.md"],
+    "type": "single-hop"
+  },
+  {
+    "id": "s08",
+    "question": "What is the default sort order for search results?",
+    "expected_files": ["how-to-manual-search.md", "search-fields.md"],
+    "type": "near-duplicate"
+  }
+]
