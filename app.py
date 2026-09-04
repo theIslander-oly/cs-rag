@@ -81,12 +81,7 @@ if question:
     with st.spinner("Searching the manual…"):
         try:
             client = get_client()
-            # backend="groq" is required here: retrieve.ask() defaults to
-            # "claude-code", which shells out to the local `claude` CLI -- that
-            # binary doesn't exist on a Streamlit Cloud container.
-            text, sources, _session_id = ask(
-                question, rerank_mode=rerank_mode, backend="groq", client=client
-            )
+            text, sources = ask(question, rerank_mode=rerank_mode, client=client)
         except Exception as e:
             st.error(f"Something went wrong: {e}")
             st.stop()
