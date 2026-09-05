@@ -9,8 +9,7 @@ from pathlib import Path
 
 import streamlit as st
 
-st.set_page_config(page_title="ComplianceSuite Docs Assistant", page_icon="📘")
-
+st.set_page_config(page_title="Helpdesk Docs Assistant", page_icon="📘")
 # retrieve.get_client() reads os.environ["GROQ_API_KEY"]. Streamlit Cloud
 # normally exports secrets as env vars too, but bridge it explicitly so the
 # app doesn't depend on that.
@@ -52,7 +51,7 @@ if not Path("./chroma").exists():
 
 from retrieve import MODEL, ask, get_client
 
-st.title("ComplianceSuite Docs Assistant")
+st.title("Helpdesk Docs Assistant")
 st.caption("Ask a question about the user manual. Answers are grounded in the docs and cited.")
 st.caption(f"Powered by Groq ({MODEL}).")
 
