@@ -1,8 +1,8 @@
-# ComplianceSuite Docs Assistant
+# Helpdesk Docs Assistant
 
 🔗 **[Try it live](https://cs-rag.streamlit.app/)**
 
-A retrieval-augmented question answering system over the ComplianceSuite user manual.
+A retrieval-augmented question answering system over a helpdesk user manual.
 Ask a question in plain English, get an answer grounded in the documentation with a
 citation back to the exact section.
 
