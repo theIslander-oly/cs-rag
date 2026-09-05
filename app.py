@@ -10,6 +10,7 @@ from pathlib import Path
 import streamlit as st
 
 st.set_page_config(page_title="Helpdesk Docs Assistant", page_icon="📘")
+
 # retrieve.get_client() reads os.environ["GROQ_API_KEY"]. Streamlit Cloud
 # normally exports secrets as env vars too, but bridge it explicitly so the
 # app doesn't depend on that.
